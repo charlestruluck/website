@@ -1,0 +1,74 @@
+html
+  head
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
+    title Random Number Generator
+    style.
+      h1 {
+      font-size: 35vw;
+      margin-left: 1%;
+      text-align: center;
+      transition-duration: 0.3s;
+      }
+      button {
+      position: fixed;
+      width: 101%;
+      margin-left: -0.5%;
+      }
+      footer {
+      position:fixed;
+      left:0px;
+      bottom:0px;
+      height:30px;
+      width:100%;
+      text-align: center;
+      }
+  body
+    button#nextButton.btn.btn-lg.btn-success(onclick='getNumber()') Next!
+    br
+    br
+    br
+    br
+    br
+    h1#randomNumber
+      span.glyphicon.glyphicon-menu-up(aria-hidden='true')
+    footer
+      | Copyright © 2016 | Charles Truluck LLC 
+      a(onclick='nightMode()') Night Mode
+      |  | Inspired by C block history
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js')
+    script.
+      function getNumber() {
+      var x = document.getElementById("randomNumber")
+      x.style.cssText = 'transform: rotateY(90deg);';
+      setTimeout(continueExecution, 300)
+      }
+      function continueExecution() {
+      var x = document.getElementById("randomNumber")
+      x.innerHTML = Math.floor((Math.random() * 20) + 1);
+      x.style.cssText = 'transform: rotateY(0deg);';
+      }
+      function nightMode() {
+      var css = 'html {-webkit-filter: invert(100%);' +
+      '-moz-filter: invert(100%);' +
+      '-o-filter: invert(100%);' +
+      '-ms-filter: invert(100%); }',
+      head = document.getElementsByTagName('head')[0],
+      style = document.createElement('style');
+      if (!window.counter) { window.counter = 1;} else  { window.counter ++;
+      if (window.counter % 2 == 0) { var css ='html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'}
+      };
+      style.type = 'text/css';
+      if (style.styleSheet){
+      style.styleSheet.cssText = css;
+      } else {
+      style.appendChild(document.createTextNode(css));
+      }
+      head.appendChild(style);
+      };
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-74364337-1', 'auto');
+      ga('send', 'pageview');

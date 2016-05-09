@@ -1,0 +1,61 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0')
+    title #{title} | Charles Truluck
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href='css/materialize.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='css/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+    script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='js/materialize.js')
+    script(src='js/init.js')
+  body
+    nav.blue.lighten-1(role='navigation')
+      .nav-wrapper.container
+        a#logo-container.brand-logo(href='#') #{title}
+        ul.right.hide-on-med-and-down 
+          li.waves-effect
+            a(href='/') Home
+          li.waves-effect
+            a(href='/about') About
+          li.waves-effect
+            a(href='/projects') Projects
+          li.waves-effect
+            a(href='/collaboration') Collabration
+        ul#nav-mobile.side-nav
+          li
+            a.waves-effect(href='/') Home
+          li
+            a.waves-effect(href='/about') About
+          li
+            a.waves-effect(href='/projects') Projects
+        a.button-collapse(href='#', data-activates='nav-mobile')
+          i.material-icons menu
+    br
+    .container
+      .main-content
+      block content
+      br
+      br
+    footer.page-footer.blue-grey
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text About My Website
+            p.grey-text.text-lighten-4
+              | As you've noticed by now, this is a website about me. I make very little income, and have to maintain this hosting, as well as some other services I have running. If you appreciate what I've done here and want to help me make stuff that changes other people's lives, I wouldn't mind a small tip.
+          .col.l3.s12
+            h5.white-text Connect
+            ul
+              li
+                a.white-text(href='http://twitter.com/charlestruluck_' target='_blank') Twitter
+              li
+                a.white-text(href='http://github.com/charlestruluck' target='_blank') GitHub
+              li
+                a.white-text(href='mailto:me@ctruluck.com') Email
+              li
+                a.modal-trigger.white-text(href="https://paypal.me/charlestruluck/15" target='_blank') Donate <3
+      .footer-copyright
+        .container
+          | &copy; 2016 Charles Truluck | Made with &hearts;, NodeJS, Jade, and MaterializeCSS

@@ -1,0 +1,15 @@
+extend layout
+block content
+  link(rel="stylesheet" href="css/404.css")
+  svg(viewbox='0 0 800 600')
+    symbol#s-text
+      text.text--line.test(text-anchor='middle', x='50%', y='35%')
+        | Error
+      text.text--line2.test(text-anchor='middle', x='50%', y='68%')
+        | 404
+    g.g-ants
+      use.text-copy(xlink:href='#s-text')
+      use.text-copy(xlink:href='#s-text')
+      use.text-copy(xlink:href='#s-text')
+      use.text-copy(xlink:href='#s-text')
+      use.text-copy(xlink:href='#s-text')
